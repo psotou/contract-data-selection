@@ -2,15 +2,9 @@ import pandas as pd
 import numpy as np
 import os, glob
 
-#Nombre
-# data = 'a.costo_detalle_contratos_MH.xlsx'
-# monto = 25000000
-# variacion = 0.2
-
 data = input('Nombre archivo:')
 monto = float(input('Monta base:'))
 variacion = float(input('Variación:'))
-
 
 def contracts(data, monto, variacion):     
     df = pd.read_excel(( os.getcwd() + '/data/' + data ).replace('\\','/'), header=7)
@@ -56,7 +50,6 @@ def contract_analysis_base(df, monto, variacion):
     return dfx
 
 df_base = contract_analysis_base(df, monto, variacion)
-
 
 def contract_selection(df, monto, variacion):
 
